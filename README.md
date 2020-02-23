@@ -1,4 +1,5 @@
-# PyroGramUserBot 🔥🤖
+# DoggoGram 🔥🤖
+# Forked from spechide
 
 A Telegram Userbot based on [Pyrogram](https://github.com/pyrogram/pyrogram)
 
