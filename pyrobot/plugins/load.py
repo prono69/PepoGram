@@ -11,7 +11,7 @@ logger = logging.getLogger()
 
 from creds import Config
 
-@Client.on_message(Filters.command("load", Config.COMMAND_HAND_LER)  & Filters.me)
+@Client.on_message(Filters.command("iload", Config.COMMAND_HAND_LER)  & Filters.me)
 async def load_plugin(client, message):
     await message.edit("Processing ...")
     try:
