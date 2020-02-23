@@ -27,7 +27,7 @@ MOVIE_IS_RUNNING = False
 @Client.on_message(Filters.command("stoppp", COMMAND_HAND_LER)  & Filters.me)
 async def test_command_one(client, message):
     MOVIE_IS_RUNNING = False
-    await message.reply_text("hmm")
+    await message.reply_text("Nikal")
 
 
 @Client.on_message(Filters.command("startpp", COMMAND_HAND_LER)  & Filters.me)
