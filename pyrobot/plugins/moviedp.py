@@ -19,18 +19,18 @@ from pyrobot import (
     TMP_DOWNLOAD_DIRECTORY
 )
 
-SLEEP_DELAY = 49
+SLEEP_DELAY = 35
 START_TIME = os.environ.get("MOVIE_L_START_TIME", None)
 MOVIE_IS_RUNNING = False
 
 
-@Client.on_message(Filters.command("stopmoviepp", COMMAND_HAND_LER)  & Filters.me)
+@Client.on_message(Filters.command("stoppp", COMMAND_HAND_LER)  & Filters.me)
 async def test_command_one(client, message):
     MOVIE_IS_RUNNING = False
-    await message.reply_text("hmm")
+    await message.reply_text("Nikal")
 
 
-@Client.on_message(Filters.command("startmoviepp", COMMAND_HAND_LER)  & Filters.me)
+@Client.on_message(Filters.command("startpp", COMMAND_HAND_LER)  & Filters.me)
 async def test_command_zero(client, message):
     # await message.edit("Processing ...")
     movie_location = " ".join(message.command[1:])
@@ -144,7 +144,7 @@ async def super_impose_text_o_img(img_path, text):
     )
     font = ImageFont.truetype(
         font_location,
-        size=45
+        size=35
     )
     # calculation for the offset
     text_w, text_h = draw.textsize(text, font)
