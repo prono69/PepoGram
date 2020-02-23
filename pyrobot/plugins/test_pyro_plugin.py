@@ -10,6 +10,6 @@ from pyrobot import (
 )
 
 
-@Client.on_message(Filters.command("testcommand", COMMAND_HAND_LER)  & Filters.me)
+@Client.on_message(Filters.command("testcmd", COMMAND_HAND_LER)  & Filters.me)
 async def _(client, message):
-    await message.edit("test ing ... failed")
+    await message.edit("`test ing ... failed`")
