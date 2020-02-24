@@ -1,12 +1,8 @@
 # DoggoGram 🔥🤖
-# Forked from spechide
-
 A Telegram Userbot based on [Pyrogram](https://github.com/pyrogram/pyrogram)
 
 ## installing
-
 #### The Easy Way
-
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 #### The Legacy Way
