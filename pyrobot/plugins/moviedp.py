@@ -24,13 +24,13 @@ START_TIME = os.environ.get("MOVIE_L_START_TIME", None)
 MOVIE_IS_RUNNING = False
 
 
-@Client.on_message(Filters.command("stoppp", COMMAND_HAND_LER)  & Filters.me)
+@Client.on_message(Filters.command("stopmpp", COMMAND_HAND_LER)  & Filters.me)
 async def test_command_one(client, message):
     MOVIE_IS_RUNNING = False
     await message.reply_text("Nikal")
 
 
-@Client.on_message(Filters.command("startpp", COMMAND_HAND_LER)  & Filters.me)
+@Client.on_message(Filters.command("startmpp", COMMAND_HAND_LER)  & Filters.me)
 async def test_command_zero(client, message):
     await message.edit("Processing ...")
     movie_location = " ".join(message.command[1:])
