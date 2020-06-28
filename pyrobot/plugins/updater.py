@@ -60,8 +60,6 @@ async def updater(client, message):
         repo.create_remote(REPO_REMOTE_NAME, OFFICIAL_UPSTREAM_REPO)
     except Exception as e:
         print(e)
-        pass
-
     tmp_upstream_remote = repo.remote(REPO_REMOTE_NAME)
     tmp_upstream_remote.fetch(active_branch_name)
 

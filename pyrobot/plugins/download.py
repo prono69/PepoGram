@@ -76,7 +76,6 @@ async def down_load_media(client, message):
                     await asyncio.sleep(10)
             except Exception as e:
                 logger.info(str(e))
-                pass
         if os.path.exists(download_file_path):
             end_t = datetime.now()
             ms = (end_t - start_t).seconds
