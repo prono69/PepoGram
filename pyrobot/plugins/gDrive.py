@@ -60,7 +60,11 @@ async def g_drive_commands(client, message):
             # time.
             creds = sql.get_credential(message.from_user.id)
             # If there are no (valid) credentials available, throw error
-            if not creds or not creds.invalid:
+            if creds and creds.invalid:
+                await message.edit_text(
+                    text=f"please run <code>{COMMAND_HAND_LER}gdrive setup</code> first"
+                )
+            else:
                 if creds and creds.refresh_token:
                     creds.refresh(get_new_http_instance())
                     # Save the credentials for the next run
@@ -91,17 +95,17 @@ async def g_drive_commands(client, message):
                         "to clear saved credentials"
                     )
                     return
-            else:
-                await message.edit_text(
-                    text=f"please run <code>{COMMAND_HAND_LER}gdrive setup</code> first"
-                )
         elif current_recvd_command == "upload":
             # The gDrive table stores the user's access and refresh tokens, and is
             # created automatically when the authorization flow completes for the first
             # time.
             creds = sql.get_credential(message.from_user.id)
             # If there are no (valid) credentials available, throw error
-            if not creds or not creds.invalid:
+            if creds and creds.invalid:
+                await message.edit_text(
+                    text=f"please run <code>{COMMAND_HAND_LER}gdrive setup</code> first"
+                )
+            else:
                 if creds and creds.refresh_token:
                     creds.refresh(get_new_http_instance())
                     # Save the credentials for the next run
@@ -176,10 +180,6 @@ async def g_drive_commands(client, message):
                         "to clear saved credentials"
                     )
                     return
-            else:
-                await message.edit_text(
-                    text=f"please run <code>{COMMAND_HAND_LER}gdrive setup</code> first"
-                )
     else:
         await message.edit_text(text="type correctly")
 
@@ -190,7 +190,7 @@ async def g_drive_setup(message):
     # time.
     creds = sql.get_credential(message.from_user.id)
     # If there are no (valid) credentials available, let the user log in.
-    if not creds or not creds.invalid:
+    if not (creds and creds.invalid):
         if creds and creds.refresh_token:
             creds.refresh(get_new_http_instance())
             # Save the credentials for the next run

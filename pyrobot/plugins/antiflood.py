@@ -20,7 +20,7 @@ async def check_flood(client, message):
     # logger.info(CHAT_FLOOD)
     if not CHAT_FLOOD:
         return
-    if not (str(message.chat.id) in CHAT_FLOOD):
+    if str(message.chat.id) not in CHAT_FLOOD:
         return
     is_admin = await AdminCheck(
         client,
